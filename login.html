@@ -7,13 +7,14 @@
 	</head>
 	<body>
 		<div>
+			<p id="urlOut"></p>
 			<button onclick="alertUrl()">Show me the url please</button>
 		</div>
 		<script>
 			
 			function alertUrl(){
 				const myParams = window.location.search;
-				
+				document.getElementById('urlOut');
 				alert(myParams);
 			}
 			
