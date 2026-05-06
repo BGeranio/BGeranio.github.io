@@ -1,0 +1,24 @@
+function alertUrl(){
+				const myParams = window.location.search;
+				document.getElementById('urlOut').innerText=`${myParams}`;
+				
+			}
+			
+			var xhr = new XMLHttpRequest();
+
+// 2. Configure it: GET-request for the URL
+xhr.open('GET', 'https://bgeranio.github.io/dataF1.txt', true);
+
+// 3. Set up a listener for when the request completes
+xhr.onload = function () {
+    if (xhr.status === 200) {
+        // Success! Use xhr.responseText to get the file content
+        alert(xhr.responseText);
+        document.getElementById('content').innerText = xhr.responseText;
+    } else {
+        alert('Error fetching the file:', xhr.statusText);
+    }
+};
+
+// 4. Send the request
+xhr.send();
